@@ -6,12 +6,17 @@ $(document).ready(function () {
     }
   });
 
+  //don't load for creating account page
+  if ($('*:contains("Create Account")').length > 0){
+    return;
+  }
+
   //initialization
   var first = $('td.title:first');
   var last = $('td.title:last').parent().prev().prev().prev().prev().children('.title:first');
 
   var current = first;
-  current.addClass('selected');
+  current.addClass('selector');
   current.removeClass('title');
   current.text("|" + current.text());
 
@@ -23,11 +28,11 @@ $(document).ready(function () {
     // array already exists, number was pressed
     if(key >= "0".charCodeAt(0) && key <= "9".charCodeAt(0)) {
       keys.push(key - "0".charCodeAt(0));
+
       //if we have two numbers exactly, goto that item
       if (keys.length == 2){
         var goto_el = String(keys[0]) + String(keys[1]) + '.';
         var next = $('td.title:contains("' + goto_el + '"):first');
-        console.log(next);
         if(next.length != 0){
           move_selector(current, next);
           current = next;
@@ -36,14 +41,9 @@ $(document).ready(function () {
         keys = new Array();
       }
     }
+
     else {
       keys = new Array();
-      /*
-      //goto
-      if (key == "g".charCodeAt(0)){
-        //create array for tracking goto: numbers
-        
-      }*/
 
       //move down
       if (key == "j".charCodeAt(0)){
@@ -91,7 +91,20 @@ $(document).ready(function () {
 
       //upvote
       else if (key == "v".charCodeAt(0) ){
-        current.next().children('center').children('a:first').click();
+        current.next().children('center').children('a[id^=up]:first').click();
+      }
+
+      //downvote
+      else if (key == "d".charCodeAt(0) ){
+        current.next().children('center').children('a[id^=down]:first').click();
+      }
+
+      //next page
+      else if (key == "m".charCodeAt(0) ){
+
+        var link = $('a:contains("More"):last').attr('href');
+        open_link("http://news.ycombinator.com" + link);
+      
       }
     }
 
@@ -121,15 +134,15 @@ $(document).ready(function () {
   //moves cursor up or down
   function move_selector(current, node) {
     current.addClass('title');
-    current.removeClass('selected');
+    current.removeClass('selector');
     current.text(current.text().substring(1,current.text().length));
 
-    node.addClass('selected');
+    node.addClass('selector');
     node.removeClass('title');
     node.text("|" + node.text().substring(0,node.text().length));
   }
 
-  //opens the link currently selected in same window
+  //opens the link currently selector in same window
   function open_link(link) {
     window.location.href = link;
   }

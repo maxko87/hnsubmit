@@ -51,6 +51,16 @@ $(document).ready(function () {
         var link = current.find('td.default').find('u').children('a').attr('href');
         open_link("http://news.ycombinator.com/" + link);
       }
+
+      //upvote
+      else if (key == "v".charCodeAt(0) ){
+        current.find('a[id^="up"]:first').click();
+      }
+
+      //downvote
+      else if (key == "d".charCodeAt(0) ){
+        current.find('a[id^="down"]').click();
+      }
       
     }
 

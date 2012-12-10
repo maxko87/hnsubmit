@@ -1,7 +1,7 @@
 {
   "name": "Hacker News Keyboard Shortcuts",
-  "version": "1.0",
-  "manifest_version": 2,
+  "version": "1.11",
+  "manifest_version": 4,
   "description": "Makes browsing HN easier with simple keyboard shortcuts.",
   "background": {
     "scripts": ["events.js"],
@@ -9,7 +9,7 @@
   },
   "content_scripts": [
     {
-      "matches": ["http://news.ycombinator.com/","http://news.ycombinator.com/news","http://news.ycombinator.com/x*"],
+      "matches": ["http://news.ycombinator.com/","http://news.ycombinator.com/news","http://news.ycombinator.com/newest","http://news.ycombinator.com/ask","http://news.ycombinator.com/x*"],
       "js": ["jquery.js", "main_shortcuts.js"],
       "css": ["main.css"]
     },
