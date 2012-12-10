@@ -5,23 +5,23 @@ List of shortcuts:
 
 Home page:
 
-j, k	: move selector up/down
-n, N 	: open link in same/new tab
-c, C	: open comments in same/new tab
-v, d	: upvote/downvote
-m 		: next page
-##		: select submission ending in ## (e.g. typing 13 selects submission 13 or 113)
+j, k  : move selector up/down
+n, N  : open link in same/new tab
+c, C  : open comments in same/new tab
+v, d  : upvote/downvote
+m     : next page
+##    : select submission ending in ## (e.g. typing 13 selects submission 13 or 113)
 
 Comments:
 
-/		  : focus on text area
-j, k	: move selector up/down
-r		  : reply
-v, d	: upvote/downvote
+/     :focus on text area
+j, k  : move selector up/down
+r     : reply
+v, d  : upvote/downvote
 
 Reply:
 
-/		  : focus on text area
+/     : focus on text area
 
 
 //TODO:
