@@ -14,14 +14,14 @@ m 		: next page
 
 Comments:
 
-/		: focus on text area
+/		  : focus on text area
 j, k	: move selector up/down
-r		: reply
+r		  : reply
 v, d	: upvote/downvote
 
 Reply:
 
-/		: focus on text area
+/		  : focus on text area
 
 
 //TODO:
