@@ -27,3 +27,4 @@ Reply:
 //TODO:
 fix shortcuts for poll pages
 make enter also open page
+make all opened links respect current scheme (i.e. HTTP vs HTTPS)
