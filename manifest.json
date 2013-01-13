@@ -14,16 +14,16 @@
       "css": ["main.css"]
     },
     {
-      "matches": ["http://news.ycombinator.com/item*"],
+      "matches": ["*://news.ycombinator.com/item*"],
       "js": ["jquery.js", "comment_shortcuts.js"],
       "css": ["main.css"]
     },
     {
-      "matches": ["http://news.ycombinator.com/reply*"],
+      "matches": ["*://news.ycombinator.com/reply*"],
       "js": ["jquery.js", "reply_shortcuts.js"]
     }
   ],
   "permissions": [
-    "http://news.ycombinator.com/"
+    "*://news.ycombinator.com/"
   ]
 }
